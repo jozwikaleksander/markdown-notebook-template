@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-http://aleksanderjozwik.me/notatki_z_fizyki/fizyka.html
-
-komenda:  pandoc --mathjax -c style.css -s fizyka.md -o fizyka.html#� �n�o�t�a�t�k�i�_�z�_�f�i�z�y�k�i�
-�
-�
-=======
 # 📝 Markdown Notebook Template
 
 ![](docs/screenshot.png)
@@ -31,4 +24,3 @@ Notebook template made in markdown and exported to HTML via Pandoc. It also uses
 
 ## 👤 Credits
 Project was made by Aleksander Jóźwik ([@jozwikaleksander](https://github.com/jozwikaleksander)).
->>>>>>> b156e3e75935e51081b442bf53637968ccf05d12
