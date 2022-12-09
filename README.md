@@ -12,7 +12,7 @@ Notebook template made in markdown and exported to HTML via Pandoc. It also uses
 
 1. Clone repo
 
-    git clone https://github.com/jozwikaleksander/markdown-notebook-template.git
+        git clone https://github.com/jozwikaleksander/markdown-notebook-template.git
 
 2. Write your notes in **index.md file** and add your images to **img directory**.
 
