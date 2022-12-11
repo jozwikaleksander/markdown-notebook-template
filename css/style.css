@@ -156,3 +156,8 @@ html {
   .title{
 	color: #D08770;
   }
+  figcaption{
+	font-size: 0.8em;
+	color: #D8DEE9;
+	opacity: 0.5;
+  }
