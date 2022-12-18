@@ -1,10 +1,20 @@
-html {
+:root{
+	--green-color: #A3BE8C;
+	--background-color: #2c323d;
+	--font-color: #ffffff;
+	--magenta-color: #B48EAD;
+	--red-color: #BF616A;
+	--yellow-color: #EBCB8B;
+	--orange-color: #D08770;
+	--blue-color: #5E81AC;
+	--figcaption-color: #D8DEE9;
+	
 	line-height: 1.5;
 	font-family: 'FiraCode Nerd Font Mono', monospace;
 	font-size: 20px;
-	color: #fff;
-	background-color: #2c323d;
-  }
+	color: var(--font-color);
+	background-color: var(--background-color);
+}
   body {
 	margin: 0 auto;
 	max-width: 36em;
@@ -43,18 +53,12 @@ html {
   p {
 	margin: 1em 0;
   }
-  a {
-	color: #1a1a1a;
-  }
-  a:visited {
-	color: #1a1a1a;
-  }
   img {
 	max-width: 100%;
   }
   h1, h2, h3, h4, h5, h6 {
 	margin-top: 1.4em;
-	color: #A3BE8C;
+	color: var(--green-color);
   }
   h5, h6 {
 	font-size: 1em;
@@ -139,6 +143,15 @@ html {
   #TOC a:not(:hover) {
 	text-decoration: none;
   }
+  #TOC a {
+	color: #bdd;
+	text-decoration: none;
+  }
+  #TOC a:hover,
+  #TOC a:visited {
+	color: var(--green-color);
+	text-decoration: none;
+  }
   code{white-space: pre-wrap;}
   span.smallcaps{font-variant: small-caps;}
   div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -151,13 +164,23 @@ html {
 	vertical-align: middle;
   }
   strong{
-	color: #B48EAD;
+	color: var(--magenta-color);
   }
   .title{
-	color: #D08770;
+	color: var(--orange-color);
   }
   figcaption{
 	font-size: 0.8em;
 	color: #D8DEE9;
 	opacity: 0.5;
-  } 
+  }
+  h2{
+	font-weight: bold;
+	color: var(--blue-color);
+  }
+  a{
+	color: var(--yellow-color);
+  }
+  a:hover{
+	color: var(--red-color);
+  }
