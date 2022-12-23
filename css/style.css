@@ -161,6 +161,16 @@ header {
 #TOC > ul {
   padding-left: 0;
 }
+#TOC > ul > li > a,
+#TOC > ul > li > a:visited {
+  color: var(--magenta-color);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+#TOC > ul > li > a:hover {
+  color: var(--red-color);
+  text-decoration: none;
+}
 #TOC a:not(:hover) {
   text-decoration: none;
 }
