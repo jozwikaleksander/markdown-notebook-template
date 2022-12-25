@@ -4,7 +4,7 @@
         {
             "label": "Convert to HTML",
             "type": "shell",
-            "command": "pandoc --metadata title=\"Notebook title\"  --toc --mathjax=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js\" -c css/style.css -s index.md -o index.html",
+            "command": "pandoc --metadata title=\"🌐 CCNAv7 sem3\" --toc --mathjax=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js\" --include-in-header=\"header.txt\" -c css/style.css -s index.md -o index.html",
             "problemMatcher": []
         }
     ]
