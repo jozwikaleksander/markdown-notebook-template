@@ -25,6 +25,7 @@
   background-color: var(--background-color);
   scroll-behavior: smooth;
 }
+/* Body */
 body {
   margin: 0 auto;
   max-width: 38em;
@@ -38,14 +39,17 @@ body {
   font-kerning: normal;
 }
 
-/* UTILITIES */
+/* Utilities */
 .disabled{
-  opacity: 0;
+  opacity: 0 !important;
   pointer-events: none;
 }
 /* ------ */
 
 /* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 12px;
+}
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb);
   height: 30px;
@@ -60,6 +64,108 @@ body {
 }
 /* ------------------------- */
 
+/* Menu */
+.scroll-button {
+  border-radius: 20px;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  z-index: 100;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: var(--magenta-color) 2px solid;;
+  background-color: var(--magenta-color);
+  text-decoration: none;
+  color: var(--background-color);
+  transition: var(--transition);
+}
+.scroll-button:hover {
+  color: var(--magenta-color);
+  background: none;
+}
+
+.toc-button {
+  border-radius: 20px;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 100;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: var(--green-color) 2px solid;
+  background-color: var(--green-color);
+  text-decoration: none;
+  color: var(--background-color);
+  transition: var(--transition);
+}
+.toc-button:hover {
+  color: var(--green-color);
+  background: none;
+}
+/* ------------------------- */
+
+/* Table of contents menu */
+
+.toc-menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-width: 50%;
+  background-color: var(--background-color);
+  z-index: 100;
+  box-shadow: var(--shadow);
+  height: 100vh;
+  opacity: 0.98;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+  overflow-y: scroll;
+  padding-left:30px;
+}
+
+.toc-menu li {
+  list-style: none;
+}
+.toc-menu ul {
+  padding-left: 1.3em;
+}
+.toc-menu > ul {
+  padding-left: 0;
+}
+.toc-menu > ul > li > a,
+.toc-menu > ul > li > a:visited {
+  color: var(--green-color);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.toc-menu > ul > li > a:hover {
+  color: var(--yellow-color);
+  text-decoration: none;
+}
+.toc-menu a:not(:hover) {
+  text-decoration: none;
+}
+.toc-menu a {
+  color: #bdd;
+  text-decoration: none;
+}
+.toc-menu a:hover,
+.toc-menu a:visited {
+  color: var(--green-color);
+  text-decoration: none;
+}
+
+/* Media */
 @media (max-width: 600px) {
   body {
     font-size: 0.9em;
@@ -67,6 +173,16 @@ body {
   }
   h1 {
     font-size: 1.8em;
+  }
+}
+@media (max-width:900px){
+  .toc-menu{
+    max-width: 100% !important;
+  }
+}
+@media (max-width:1200px) and (min-width: 900px){
+  .toc-menu{
+    max-width: 80% !important;
   }
 }
 @media print {
@@ -87,11 +203,44 @@ body {
     page-break-after: avoid;
   }
 }
+/* Table of contents */
+#TOC li {
+  list-style: none;
+}
+#TOC ul {
+  padding-left: 1.3em;
+}
+#TOC > ul {
+  padding-left: 0;
+}
+#TOC > ul > li > a,
+#TOC > ul > li > a:visited {
+  color: var(--green-color);
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+#TOC > ul > li > a:hover {
+  color: var(--yellow-color);
+  text-decoration: none;
+}
+#TOC a:not(:hover) {
+  text-decoration: none;
+}
+#TOC a {
+  color: #bdd;
+  text-decoration: none;
+}
+#TOC a:hover,
+#TOC a:visited {
+  color: var(--green-color);
+  text-decoration: none;
+}
+
+/* General */
 p {
   margin: 1em 0;
 }
 img {
-  /* max-width: 100%; */
   width: 100%;
 }
 h1,
@@ -101,12 +250,25 @@ h4,
 h5,
 h6 {
   margin-top: 1.4em;
+}
+h1{
   color: var(--green-color);
+}
+h2{
+  color: var(--blue-color);
+}
+h3{
+  color: var(--lightblue-color);
+}
+h4{
+  color: var(--yellow-color);
+}
+h5{
+  color: var(--cyan-color);
 }
 h5,
 h6 {
   font-size: 1em;
-  font-style: italic;
 }
 h6 {
   font-weight: normal;
@@ -136,7 +298,7 @@ code {
 pre {
   margin: 1em 0;
   overflow: auto;
-  background-color: #1c212b;
+  background-color: var(--darkbackground-color);
   padding: 20px;
   border-radius: 10px;
 }
@@ -188,37 +350,6 @@ header {
   margin-bottom: 4em;
   text-align: center;
 }
-#TOC li {
-  list-style: none;
-}
-#TOC ul {
-  padding-left: 1.3em;
-}
-#TOC > ul {
-  padding-left: 0;
-}
-#TOC > ul > li > a,
-#TOC > ul > li > a:visited {
-  color: var(--green-color);
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-#TOC > ul > li > a:hover {
-  color: var(--yellow-color);
-  text-decoration: none;
-}
-#TOC a:not(:hover) {
-  text-decoration: none;
-}
-#TOC a {
-  color: #bdd;
-  text-decoration: none;
-}
-#TOC a:hover,
-#TOC a:visited {
-  color: var(--green-color);
-  text-decoration: none;
-}
 code {
   white-space: pre-wrap;
 }
@@ -265,71 +396,4 @@ a {
 }
 a:hover {
   color: var(--red-color);
-}
-
-::-webkit-scrollbar {
-  /* width */
-  width: 12px;
-}
-.scroll-button {
-  border-radius: 20px;
-  width: 50px;
-  height: 50px;
-  position: fixed;
-  right: 20px;
-  bottom: 100px;
-  z-index: 100;
-  display: flex;
-  cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border: var(--magenta-color) 2px solid;;
-  background-color: var(--magenta-color);
-  text-decoration: none;
-  color: var(--background-color);
-  transition: var(--transition);
-}
-.scroll-button:hover {
-  color: var(--magenta-color);
-  background: none;
-}
-
-.toc-button {
-  border-radius: 20px;
-  width: 50px;
-  height: 50px;
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 100;
-  display: flex;
-  cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border: var(--green-color) 2px solid;;
-  background-color: var(--green-color);
-  text-decoration: none;
-  color: var(--background-color);
-  transition: var(--transition);
-}
-.toc-button:hover {
-  color: var(--green-color);
-  background: none;
-}
-.toc-menu{
-  position: fixed;
-  top: 0;
-  left: 0;
-  max-width: 50%;
-  background-color: var(--background-color);
-  z-index: 100;
-  opacity:0.9;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  transition: var(--transition);
-  overflow-y: scroll;
-  padding-left:30px;
 }
